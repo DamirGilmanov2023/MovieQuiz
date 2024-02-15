@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bad_rez.mp3-97d79644dba447d7c23a2731fb99ae93.mp3str"
+
+[deps]
+
+source_file="res://sounds/bad_rez.mp3"
+dest_files=[ "res://.import/bad_rez.mp3-97d79644dba447d7c23a2731fb99ae93.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

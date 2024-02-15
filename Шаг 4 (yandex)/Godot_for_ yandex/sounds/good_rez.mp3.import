@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/good_rez.mp3-fbabfc9bbaecc23535156f6e3cf271ac.mp3str"
+
+[deps]
+
+source_file="res://sounds/good_rez.mp3"
+dest_files=[ "res://.import/good_rez.mp3-fbabfc9bbaecc23535156f6e3cf271ac.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

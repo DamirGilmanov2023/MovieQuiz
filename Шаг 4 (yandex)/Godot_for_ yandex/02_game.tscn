@@ -1,0 +1,803 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://img/2.jpg" type="Texture" id=1]
+[ext_resource path="res://style_button/font_style_button.tres" type="DynamicFont" id=2]
+[ext_resource path="res://img_for_scene/back2.jpg" type="Texture" id=3]
+[ext_resource path="res://style_button/button_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://02_game.gd" type="Script" id=5]
+[ext_resource path="res://style_button/button_hover.tres" type="StyleBox" id=6]
+[ext_resource path="res://style_button/button_pressed.tres" type="StyleBox" id=7]
+[ext_resource path="res://style_button/button_disabled3.tres" type="StyleBox" id=8]
+[ext_resource path="res://style_button/button_disabled1.tres" type="StyleBox" id=9]
+[ext_resource path="res://style_button/button_disabled4.tres" type="StyleBox" id=10]
+[ext_resource path="res://style_button/button_disabled2.tres" type="StyleBox" id=11]
+[ext_resource path="res://img_for_scene/life.png" type="Texture" id=12]
+[ext_resource path="res://fonts/ofont.ru_Bad Comic.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://sounds/bad_rez.wav" type="AudioStream" id=14]
+[ext_resource path="res://sounds/good_rez.wav" type="AudioStream" id=15]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0470588, 0.74902, 0.933333, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=12]
+size = 35
+font_data = ExtResource( 13 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/Kadr:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "animate"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/Kadr:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "animate2"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/Kadr:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/life1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/life2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/life3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../l_life1:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../l_life1:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../l_life2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../l_life3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../l_life1:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 275, 115 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../l_life2:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 338, 115 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../l_life3:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 402, 116 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../l_score:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../l_score:rect_position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 662, 78 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "animate_life_1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/life1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0.509804 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../l_life1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../l_life1:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 275, 115 ), Vector2( 275, 100 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "animate_life_2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/life2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0.509804 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../l_life2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../l_life2:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 338, 115 ), Vector2( 338, 100 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "animate_life_3"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../MarginContainer/VBoxContainer/HBoxContainer/life3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0.509804 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../l_life3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../l_life3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 402, 116 ), Vector2( 402, 100 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "animate_score"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../l_score:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../l_score:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 650, 80 ), Vector2( 650, 50 ) ]
+}
+
+[sub_resource type="DynamicFont" id=11]
+size = 29
+font_data = ExtResource( 13 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="back" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.04
+anchor_top = 0.167
+anchor_right = 0.965
+anchor_bottom = 0.469
+margin_left = 0.200001
+margin_top = -0.0800018
+margin_right = -6.80005
+margin_bottom = 11.44
+rect_rotation = -1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 30
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 30.0
+margin_right = 700.0
+margin_bottom = 1220.0
+custom_constants/separation = 20
+
+[node name="Zagl" type="Control" parent="MarginContainer/VBoxContainer"]
+margin_right = 680.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 0, 66 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Zagl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="NumQ" type="Label" parent="MarginContainer/VBoxContainer/Zagl/HBoxContainer"]
+margin_top = 11.0
+margin_right = 338.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 12 )
+text = "NumQ:"
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/Zagl/HBoxContainer"]
+margin_left = 342.0
+margin_top = 11.0
+margin_right = 680.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 12 )
+text = "Score:"
+align = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_left = 250.0
+margin_top = 86.0
+margin_right = 429.0
+margin_bottom = 130.0
+size_flags_horizontal = 6
+custom_constants/separation = 10
+
+[node name="life1" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 53.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( -1186, 0 )
+texture = ExtResource( 12 )
+
+[node name="life2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 63.0
+margin_right = 116.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( -1186, 0 )
+texture = ExtResource( 12 )
+
+[node name="life3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 126.0
+margin_right = 179.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( -1186, 0 )
+texture = ExtResource( 12 )
+
+[node name="Zagl2" type="Control" parent="MarginContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 680.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Kadr" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+margin_left = 29.0
+margin_top = 190.0
+margin_right = 651.0
+margin_bottom = 540.0
+size_flags_horizontal = 6
+texture = ExtResource( 1 )
+
+[node name="Zagl3" type="Control" parent="MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 560.0
+margin_right = 680.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 560.0
+margin_right = 680.0
+margin_bottom = 1190.0
+rect_min_size = Vector2( 0, 630 )
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+margin_left = 90.0
+margin_top = 135.0
+margin_right = 590.0
+margin_bottom = 495.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_constants/vseparation = 40
+
+[node name="Variant_1" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer"]
+margin_right = 500.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 500, 60 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Тайное ообщество второсортных королевских особ"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Variant_2" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer"]
+margin_top = 100.0
+margin_right = 500.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 500, 60 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 11 )
+custom_styles/normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Тайное общество второсортных королевских особ"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Variant_3" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer"]
+margin_top = 200.0
+margin_right = 500.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 500, 60 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Тайное общество второсортных королевских особ"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Variant_4" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer"]
+margin_top = 300.0
+margin_right = 500.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 500, 60 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 10 )
+custom_styles/normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Тайное общество второсортных королевских особ"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="show_rezult_delay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="fade" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/animate = SubResource( 5 )
+anims/animate2 = SubResource( 6 )
+
+[node name="life" type="AnimationPlayer" parent="."]
+root_node = NodePath("../fade")
+anims/RESET = SubResource( 8 )
+anims/animate_life_1 = SubResource( 7 )
+anims/animate_life_2 = SubResource( 9 )
+anims/animate_life_3 = SubResource( 10 )
+anims/animate_score = SubResource( 13 )
+
+[node name="l_life1" type="Label" parent="."]
+anchor_left = 0.382
+anchor_top = 0.093
+anchor_right = 0.439
+anchor_bottom = 0.125
+margin_left = -0.0400085
+margin_top = -0.32
+margin_right = 779.68
+margin_bottom = 753.92
+custom_fonts/font = SubResource( 11 )
+
+[node name="l_life2" type="Label" parent="."]
+anchor_left = 0.469
+anchor_top = 0.093
+anchor_right = 0.526
+anchor_bottom = 0.125
+margin_left = 0.319977
+margin_top = -0.32
+margin_right = 780.04
+margin_bottom = 753.92
+custom_fonts/font = SubResource( 11 )
+
+[node name="l_life3" type="Label" parent="."]
+anchor_left = 0.558
+anchor_top = 0.094
+anchor_right = 0.615
+anchor_bottom = 0.125
+margin_left = 0.23999
+margin_top = -0.559998
+margin_right = 779.96
+margin_bottom = 731.36
+custom_fonts/font = SubResource( 11 )
+
+[node name="l_score" type="Label" parent="."]
+anchor_left = 0.919
+anchor_top = 0.063
+anchor_right = 0.978
+anchor_bottom = 0.094
+margin_left = 0.320007
+margin_top = -0.120003
+margin_right = 433.64
+margin_bottom = 381.84
+custom_fonts/font = SubResource( 11 )
+
+[node name="Audio_good_rez" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="Audio_bad_rez" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_1" to="." method="_on_Variant_1_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_2" to="." method="_on_Variant_2_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_3" to="." method="_on_Variant_3_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/CenterContainer/GridContainer/Variant_4" to="." method="_on_Variant_4_button_up"]
+[connection signal="timeout" from="show_rezult_delay" to="." method="_on_show_rezult_delay_timeout"]
+[connection signal="animation_finished" from="fade" to="." method="_on_fade_animation_finished"]
+[connection signal="animation_finished" from="life" to="." method="_on_life_animation_finished"]

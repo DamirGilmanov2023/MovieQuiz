@@ -1,0 +1,303 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://fonts/ofont.ru_Bad Comic.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://img_for_scene/back.png" type="Texture" id=2]
+[ext_resource path="res://img_for_scene/icon_video.png" type="Texture" id=3]
+[ext_resource path="res://style_button/button_video_hover.tres" type="StyleBox" id=4]
+[ext_resource path="res://style_button/button_video_pressed.tres" type="StyleBox" id=5]
+[ext_resource path="res://style_button/button_video.tres" type="StyleBox" id=6]
+[ext_resource path="res://style_button/button_repeat_pressed.tres" type="StyleBox" id=7]
+[ext_resource path="res://style_button/button_repeat_hover.tres" type="StyleBox" id=8]
+[ext_resource path="res://style_button/button_repeat.tres" type="StyleBox" id=9]
+[ext_resource path="res://style_button/button_repeat2.tres" type="StyleBox" id=10]
+[ext_resource path="res://style_button/button_repeat_pressed2.tres" type="StyleBox" id=11]
+[ext_resource path="res://style_button/button_repeat_hover2.tres" type="StyleBox" id=12]
+[ext_resource path="res://03a_good_rez.gd" type="Script" id=13]
+[ext_resource path="res://style_button/button_video_disabled.tres" type="StyleBox" id=14]
+[ext_resource path="res://sounds/color_click.wav" type="AudioStream" id=15]
+[ext_resource path="res://sounds/win.wav" type="AudioStream" id=16]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0470588, 0.74902, 0.933333, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 28
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 29, 207 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "animate"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=9]
+size = 44
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 0.266667, 0.203922, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 13 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -1236.0
+margin_top = -53.0
+margin_right = 684.0
+margin_bottom = 1027.0
+rect_scale = Vector2( 1.27261, 1.27261 )
+texture = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -331.0
+margin_top = -413.0
+margin_right = 337.0
+margin_bottom = -6.0
+rect_scale = Vector2( 0.995796, 1.40312 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 648.0
+margin_bottom = 509.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+margin_right = 628.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 2 )
+text = "Молодец!!!"
+align = 1
+
+[node name="Control" type="Control" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 130.0
+margin_right = 628.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 628.0
+margin_bottom = 199.0
+custom_fonts/font = SubResource( 3 )
+text = "Правильные ответы:"
+
+[node name="Label3" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 209.0
+margin_right = 628.0
+margin_bottom = 258.0
+custom_fonts/font = SubResource( 3 )
+text = "Сохранено жизней:"
+
+[node name="Label4" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 268.0
+margin_right = 628.0
+margin_bottom = 317.0
+custom_fonts/font = SubResource( 3 )
+text = "Очки:"
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+margin_left = 269.0
+margin_top = 327.0
+margin_right = 359.0
+margin_bottom = 370.0
+rect_min_size = Vector2( 90, 0 )
+size_flags_horizontal = 6
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/disabled = ExtResource( 14 )
+custom_styles/normal = ExtResource( 6 )
+text = "x2"
+icon = ExtResource( 3 )
+
+[node name="Control4" type="Control" parent="Panel/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 380.0
+margin_right = 628.0
+margin_bottom = 423.0
+rect_min_size = Vector2( 0, 43 )
+
+[node name="Control2" type="Control" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 380.0
+margin_right = 628.0
+margin_bottom = 410.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Button2" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 420.0
+margin_right = 628.0
+margin_bottom = 455.0
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = ExtResource( 12 )
+custom_styles/pressed = ExtResource( 11 )
+custom_styles/normal = ExtResource( 10 )
+text = "Авторизуйтесь для сохранения результата"
+
+[node name="Control3" type="Control" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 420.0
+margin_right = 628.0
+margin_bottom = 430.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Button3" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 440.0
+margin_right = 628.0
+margin_bottom = 489.0
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/normal = ExtResource( 9 )
+text = "Продолжить игру"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 371, 345 )
+scale = Vector2( 1.97729, 2.16331 )
+emitting = false
+amount = 10000
+lifetime = 3.0
+one_shot = true
+speed_scale = 3.0
+fract_delta = false
+emission_shape = 1
+emission_sphere_radius = 0.01
+gravity = Vector2( 1, 1 )
+linear_accel = 100.0
+radial_accel = 100.0
+radial_accel_random = 1.0
+tangential_accel = 100.0
+tangential_accel_random = 1.0
+scale_amount = 8.0
+scale_amount_random = 1.0
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 7 )
+anims/animate = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
+
+[node name="rating" type="Label" parent="."]
+anchor_left = 0.026
+anchor_top = 0.022
+anchor_right = 0.59
+anchor_bottom = 0.071
+margin_left = 9.28
+margin_top = -0.280003
+margin_right = 81.2
+margin_bottom = -7.04
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "Ваш рейтинг: 0"
+align = 1
+
+[node name="AudioWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="Timer_button" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="Panel/MarginContainer/VBoxContainer/Button2" to="." method="_on_Button2_button_down"]
+[connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/Button3" to="." method="_on_Button3_button_up"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer_button" to="." method="_on_Timer_button_timeout"]
